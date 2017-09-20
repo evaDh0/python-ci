@@ -13,7 +13,7 @@ jobs:
       - run: 
           name: Install dependencies
           command: |
-            conda create -n test_env --file=environment.yml 
+            conda create env -n test_env --file=environment.yml 
             source activate test_env
       - run:
           name: Run tests
