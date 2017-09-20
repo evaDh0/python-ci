@@ -1,0 +1,22 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: /python-ci
+    docker:
+      - image: python
+    steps:
+      - checkout
+      - run:
+          name: Hello World test
+          command: |
+            echo "Hello world"
+      - run: 
+          name: Install dependencies
+          command: |
+            python -m pip install -r requirements.txt 
+      - run:
+          name: Run tests
+          command: |
+            nosetests
+        
